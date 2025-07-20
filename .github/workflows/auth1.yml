@@ -5,14 +5,13 @@ on: push
 jobs:
     auth_login:
         runs-on: ubuntu-latest
+        env:
+            USERNAME: nathanrsilva
+            EMAIL: nathan@gmail.com
+            PASSWORD: nathan123
         steps:
             - name: username
-              env: 
-                USERNAME: nathanrsilva
               run: echo "Username $USERNAME"
 
             - name:
-              env:
-                EMAIL: nathanrsilva@gmail.com
-                PASSWORD: nathansilva
               run: echo email=$EMAIL password=$PASSWORD
