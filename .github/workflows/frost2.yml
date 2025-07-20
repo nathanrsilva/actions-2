@@ -1,0 +1,19 @@
+name: Frost Dois
+
+on: push
+
+jobs:
+    Segundo_Frost:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Create File
+              run: touch srdamex.txt
+
+            - name: Write File
+              run: echo "SrDaMex1 amassa muuito!" >> srdamex.txt
+
+            - name: Read File
+              run: cat srdamex.txt
