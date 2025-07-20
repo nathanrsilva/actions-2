@@ -17,4 +17,4 @@ jobs:
               run: echo "Username $USERNAME"
 
             - name:
-              run: echo email=$EMAIL password=$PASSWORD
+              run: echo email=${{env.EMAIL}} password=${{env.PASSWORD}}
