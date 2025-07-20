@@ -1,0 +1,19 @@
+name: Gerar Arte Primeiro
+
+on: push
+
+jobs:
+    gerar_arte:
+        runs-on: ubuntu-latest
+        steps:
+           - name: Checkout Repo
+             uses: actions/checkout@v4
+             
+           - name: Install Cowsay Program
+             uses: sudo apt-get install cowsay -y
+
+           - name: Execute Cowsay
+             run: cowsay -f bong "Srdamex é muuito apelao" >> srdamex.txt
+
+           - name: Read File
+             run: cat srdamex.txt
