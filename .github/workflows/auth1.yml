@@ -2,13 +2,16 @@ name: Auth Primeiro
 
 on: push
 
+env:
+    USERNAME: nathanrsilva
+    EMAIL: nathan@gmail.com
+    PASSWORD: nathan123
+
+
+    
 jobs:
     auth_login:
         runs-on: ubuntu-latest
-        env:
-            USERNAME: nathanrsilva
-            EMAIL: nathan@gmail.com
-            PASSWORD: nathan123
         steps:
             - name: username
               run: echo "Username $USERNAME"
