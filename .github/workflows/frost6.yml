@@ -16,6 +16,7 @@ jobs:
               run: cowsay -f dragon "Hello cow" >> cow.txt
 
     ler_arte:
+        needs: gerar_arte
         runs-on: ubuntu-latest
         steps:
             - name: Ler Arquivo
