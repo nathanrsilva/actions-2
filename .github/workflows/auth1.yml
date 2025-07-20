@@ -1,0 +1,12 @@
+name: Auth Primeiro
+
+on: push
+
+jobs:
+    auth_login:
+        runs-on: ubuntu-latest
+        steps:
+            - name: username
+              env: 
+                USERNAME: nathanrsilva
+              run: echo "Username $USERNAME"
