@@ -1,0 +1,13 @@
+name: Second Workflow
+
+on: push
+
+jobs: 
+    Second_Job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Welcome Message
+              run: echo "Hello my friend!"
+
+            - name: List Files
+              run: ls -ltra
