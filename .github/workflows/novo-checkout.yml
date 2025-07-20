@@ -1,0 +1,16 @@
+name: Novo Checkout
+
+on: push
+
+jobs:
+    primeiro_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+
+            - name: Welcome Message
+              run: echo "Dont Cry!"
+
+            - name: List Files
+              run: ls
