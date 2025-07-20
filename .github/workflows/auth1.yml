@@ -10,3 +10,9 @@ jobs:
               env: 
                 USERNAME: nathanrsilva
               run: echo "Username $USERNAME"
+
+            - name:
+              env:
+                EMAIL: nathanrsilva@gmail.com
+                PASSWORD: nathansilva
+              run: echo email=$EMAIL password=$PASSWORD
