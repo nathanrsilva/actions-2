@@ -16,3 +16,4 @@ jobs:
                 touch ./teste/srdamex.txt
                 echo "Damex Apelao" >> ./teste/srdamex.txt
                 cat ./teste/srdamex.txt
+                ls
