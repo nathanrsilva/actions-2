@@ -1,0 +1,19 @@
+name: Gerar Arte Dois
+
+on: push
+
+jobs:
+    gerar_arte:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+
+            - name: Install Cowsay
+              run: sudo apt-get install cowsay -y
+
+            - name: Gerar Arte
+              run: cowsay -f cow "Hello, i'm a cow, hihihihi" >> artwork.txt
+
+            - name: Ler Arte
+              run: cat arwork.txt
