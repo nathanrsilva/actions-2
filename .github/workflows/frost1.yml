@@ -1,0 +1,19 @@
+name: Frost 1
+
+on: push
+
+jobs:
+    Primeiro_Frost:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Create File
+              run: touch helloWorld.txt
+
+            - name: Write File
+              run: echo "Hello My Friend!" >> helloWorld.txt
+
+            - name: Read File
+              run: cat helloWorld.txt
