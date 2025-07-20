@@ -13,7 +13,7 @@ jobs:
              run: sudo apt-get install cowsay -y
 
            - name: Execute Cowsay
-             run: cowsay meow "Srdamex é muuito apelao" >> srdamex.txt
+             run: cowsay dragon "Srdamex é muuito apelao" >> srdamex.txt
 
            - name: Read File
              run: cat srdamex.txt
