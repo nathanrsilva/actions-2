@@ -6,18 +6,26 @@ jobs:
     gerar_arte:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v4
-
             - name: Install Cowsay
               run: sudo apt-get install cowsay -y
 
             - name: Gerar Arte
               run: cowsay -f dragon "Hello cow" >> cow.txt
 
+            - name: Upload Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: my-cow.txt
+                path: cow.txt
+
     ler_arte:
         needs: gerar_arte
         runs-on: ubuntu-latest
         steps:
+            - name: Download Artifact
+              uses: actions/download-artifact@v4
+              with:
+                    name: my-cow.txt
+
             - name: Ler Arquivo
               run: cat cow.txt
