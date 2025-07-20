@@ -19,6 +19,7 @@ jobs:
                 path: ./cow-file.txt
 
     ler_image:
+        needs: gerar_image
         runs-on: ubuntu-latest
         steps:
             - name: Download Artifact
