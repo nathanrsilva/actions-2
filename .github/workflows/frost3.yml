@@ -1,0 +1,16 @@
+name: Frost Tres
+
+on: push
+
+jobs:
+    Frost_tres:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions@checkout@v4
+            
+            - name: My File
+              run: |
+                touch ./teste/srdamex.txt
+                echo "Damex Apelao" >> ./teste/srdamex.txt
+                cat ./teste/srdamex.txt
