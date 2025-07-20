@@ -3,11 +3,12 @@ name: Terceiro Frost
 on: push
 
 jobs:
-    Frost_tres:
+    frost_tres:
         runs-on: ubuntu-latest
         steps:
+
             - name: Checkout
-              uses: actions@checkout@v4
+              uses: actions/checkout@v4
             
             - name: My File
               run: |
