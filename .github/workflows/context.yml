@@ -10,10 +10,5 @@ jobs:
         steps:
             - name: primeiro
               env:
-                GITHUB_CONTEXT: "${{toJson(github)}}"
-              run: echo ${{env.GITHUB_CONTEXT}}
-
-            - name: Dump GitHub context
-              env:
-                GITHUB_CONTEXT: ${{ toJson(github) }}
-              run: echo "$GITHUB_CONTEXT"
+                GITHUB_CONTEXT: ${{toJson(github)}}
+              run: echo "${{env.GITHUB_CONTEXT}}"
