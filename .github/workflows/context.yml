@@ -1,0 +1,14 @@
+name: Testing Context
+
+on: 
+    push:
+    workflow_dispatch: 
+
+jobs:
+    primeira_parte:
+        runs-on: ubuntu-latest
+        steps:
+            - name: primeiro
+              env:
+                GITHUB_CONTEXT: "${{toJson(github)}}"
+              run: echo ${{env.GITHUB_CONTEXT}}
