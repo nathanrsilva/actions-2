@@ -1,6 +1,6 @@
 name: That's Is
 
-on: workflow_dispatch
+on: push
 
 jobs: 
     gerar_image:
