@@ -19,10 +19,8 @@ jobs:
                 path: ./cow-file.txt
 
     ler_image:
+        if: github.ref == 'refs/heads/main'
         needs: gerar_image
-        concurrency: 
-          group: deploy-image
-          cancel-in-progress: false
         runs-on: ubuntu-latest
         steps:
             - name: Download Artifact
@@ -36,5 +34,4 @@ jobs:
             - name: Mensagem de Sucesso
               timeout-minutes: 1
               run: | 
-               echo "Leita realizado com sucesso!"
-               sleep 600s
+               echo "Leita realizado com sucesso!!!!!"
