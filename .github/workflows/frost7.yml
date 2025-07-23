@@ -1,4 +1,4 @@
-name: Generate Ultima Image
+name: Generate Ultimate Image
 
 on: workflow_dispatch
 
