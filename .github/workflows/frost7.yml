@@ -19,6 +19,7 @@ jobs:
                 path: ./cow-file.txt
 
     ler_image:
+        if: github.ref == 'refs/heads/main'
         needs: gerar_image
         concurrency: 
           group: deploy-image
