@@ -20,7 +20,9 @@ jobs:
 
     ler_image:
         needs: gerar_image
-
+        concurrency: 
+          group: deploy-image
+          cancel-in-progress: false
         runs-on: ubuntu-latest
         steps:
             - name: Download Artifact
