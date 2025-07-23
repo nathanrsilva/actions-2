@@ -1,6 +1,6 @@
 name: Generate Ultima Image
 
-on: push
+on: workflow_dispatch
 
 jobs: 
     gerar_image:
@@ -31,4 +31,6 @@ jobs:
               run: cat cow-file.txt
 
             - name: Mensagem de Sucesso
-              run: echo "Leita realizado com sucesso!"
+              run: | 
+               echo "Leita realizado com sucesso!"
+               sleep 600s

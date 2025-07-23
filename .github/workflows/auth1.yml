@@ -1,18 +1,12 @@
 name: Auth Primeiro
 
-on: 
-  workflow_dispatch: 
-  # schedule:
-    # - cron: "*/1 * * * *"
-    # push
+on: push
 
 env:
     USERNAME: nathanrsilva
     EMAIL: nathan@gmail.com
     PASSWORD: nathan123
 
-
-    
 jobs:
     auth_login:
         runs-on: ubuntu-latest
