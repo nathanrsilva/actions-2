@@ -10,6 +10,10 @@ jobs:
           matrix:
             os_to_run: [ubuntu-latest, ubuntu-20.04, windows-latest]
             images_to_test: [hello-world, alpine]
+            exclude:
+              - images_to_exclude: alpine
+                os_to_exclude_image: windows-latest
+                
         runs-on: ${{matrix.os_to_run}}
         steps:
             - name: Echo Docker Details
