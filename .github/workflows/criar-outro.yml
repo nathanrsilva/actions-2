@@ -1,6 +1,6 @@
-name: Generate Ultimate Image
+name: That's Is
 
-on: workflow_dispatch
+on: push
 
 jobs: 
     gerar_image:
@@ -21,6 +21,9 @@ jobs:
     ler_image:
         if: github.ref == 'refs/heads/main'
         needs: gerar_image
+        concurrency: 
+          group: deploy-image
+          cancel-in-progress: false
         runs-on: ubuntu-latest
         steps:
             - name: Download Artifact
@@ -34,4 +37,5 @@ jobs:
             - name: Mensagem de Sucesso
               timeout-minutes: 1
               run: | 
-               echo "Leita realizado com sucesso!!!!!"
+               echo "Leita realizado com sucesso!!!"
+               sleep 600s
