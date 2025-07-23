@@ -16,7 +16,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: cowFile
-                path: ./cow-file.txt
+                path: cow-file.txt
 
     ler_image:
         if: github.ref == 'refs/heads/main'
