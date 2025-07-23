@@ -16,11 +16,11 @@ jobs:
             images_to_test: [hello-world, alpine]
 
             exclude:
-              - images_to_exclude: alpine
-                os_to_exclude_image: windows-latest
+              - images_to_test: alpine
+                os_to_run: windows-latest
             include:
-              - images_to_include: amd64/alpine
-                os_to_include_image: ubuntu-20.04
+              - images_to_test: amd64/alpine
+                os_to_run: ubuntu-20.04
 
         runs-on: ${{matrix.os_to_run}}
         steps:
