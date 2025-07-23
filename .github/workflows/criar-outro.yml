@@ -1,0 +1,41 @@
+name: That's Is
+
+on: workflow_dispatch
+
+jobs: 
+    gerar_image:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Install Cowsay
+              run: sudo apt-get install cowsay -y
+
+            - name: Generate Image
+              run: cowsay -f dragon "How are you?" >> cow-file.txt
+
+            - name: Upload Image
+              uses: actions/upload-artifact@v4
+              with:
+                name: cowFile
+                path: ./cow-file.txt
+
+    ler_image:
+        if: github.ref == 'refs/heads/main'
+        needs: gerar_image
+        concurrency: 
+          group: deploy-image
+          cancel-in-progress: false
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download Artifact
+              uses: actions/download-artifact@v4
+              with:
+                name: cowFile
+
+            - name: Read Image
+              run: cat cow-file.txt
+
+            - name: Mensagem de Sucesso
+              timeout-minutes: 1
+              run: | 
+               echo "Leita realizado com sucesso!"
+               sleep 600s
